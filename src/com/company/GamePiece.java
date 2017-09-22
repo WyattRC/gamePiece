@@ -16,28 +16,44 @@ public class GamePiece {
     }
 
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
     public void move(int X, int Y) {
-        if (!freeze) {
+        if (!this.freeze) {
             this.positionX = X;
             this.positionY = Y;
-
+            System.out.println("X: "  + X + " Y: " + Y);
         }
     }
 
 
 
-    public void freeze(boolean T) {
+    public void freeze() {
 
-        this.freeze = T;
+        this.freeze = true;
+        System.out.println("Piece is frozen in place.");
+    }
+    public void unFreeze(){
+        this.freeze = false;
     }
 
-    public void name(String name){
-        this.name = name;
-    }
 
-    public void color(String color){
-        this.color = color;
-    }
+
+
 
 
     public String toString() {
